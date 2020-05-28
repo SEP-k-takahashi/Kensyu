@@ -27,8 +27,8 @@
 	};
 	limitSta = (Integer.parseInt(nowPage) - 1) * 10;
 
-	Class.forName("com.mysql.jdbc.Driver");
-	connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb?characterEncoding=UTF-8&serverTimezone=JST","root", "1234567890");
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb?characterEncoding=UTF-8&serverTimezone=JST","root", "ujoi8zmk");
 	stmt = connect.createStatement();
 	//先に全件数を取得
 	CntQuery = "select count(*) as cnt from tbl_jusho Where delete_flg = 0 ";
@@ -190,7 +190,11 @@
 		    <tr>
 			<td><%= rs.getInt("id")%></td>
 			<td><%= rs.getString("name")%></td>
-			<td><%= rs.getString("address")%></td>
+			<!-- <td><%= rs.getString("address")%></td> -->
+			<td>
+				<div class="content" title="<%= rs.getString("address")%>">
+					<p><%= rs.getString("address")%></p>
+				</div></td>
 			<td><%= rs.getString("number")%></td>
 			<td><%= rs.getString("delete_flg")%></td>
 

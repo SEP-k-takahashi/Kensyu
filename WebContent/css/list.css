@@ -19,11 +19,7 @@ table th {
 .center {
     text-align: center;
 }
-p {
-  color: orange;
-  font-size: 20px;
 
-}
 
 .btn-stitch {
   display: inline-block;
@@ -46,4 +42,11 @@ p {
 .Paging ul li {
 	list-style-type: none;
 	display: inline-block;
+}
+
+.content p{
+	width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
